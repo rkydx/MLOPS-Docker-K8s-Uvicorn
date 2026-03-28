@@ -1,0 +1,43 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: diabetes-app
+  labels:
+    app: diabetes-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: diabetes-app
+  template:
+    metadata:
+      labels:
+        app: diabetes-app
+    spec:
+      containers:
+        - name: diabetes-app
+          image: rkydx/diabetes-app:v1
+          ports:
+          - containerPort: 8000
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: diabetes-app-service
+spec:
+  selector:
+    app: diabetes-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+  type: LoadBalancer
