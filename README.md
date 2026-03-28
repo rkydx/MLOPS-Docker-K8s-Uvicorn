@@ -39,6 +39,7 @@ This project demonstrates a complete machine learning lifecycle:
 ---
 
 ## Project Structure
+```markdown
 .
 ├── mainapp.py # FastAPI application
 ├── data_preparation_train.py # Model training script
@@ -63,6 +64,7 @@ Application UI : http://localhost:8000/docs
 ## API Endpoint
 
 ### Request Body
+```markdown
 {
   "Pregnancies": 2,
   "Glucose": 120,
@@ -72,6 +74,7 @@ Application UI : http://localhost:8000/docs
 }
 
 ### Response
+```markdown
 {
   "Diabetic or not?": true
 }
