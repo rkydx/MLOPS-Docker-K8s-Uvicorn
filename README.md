@@ -47,7 +47,7 @@ This project demonstrates a complete machine learning lifecycle:
 ├── requirements.txt # Dependencies
 ├── Dockerfile # Containerization
 ├── deployment.yaml # Kubernetes Deployment & Service
-
+```
 
 ---
 
@@ -72,10 +72,11 @@ Application UI : http://localhost:8000/docs
   "BMI": 25.5,
   "Age": 30
 }
-
+```
 ### Response
-```markdown
+```
 {
   "Diabetic or not?": true
 }
+```
 
